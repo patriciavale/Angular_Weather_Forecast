@@ -1,0 +1,22 @@
+<!-- Today's and Weekly Forecasts in two columns -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4" id="today-forecast-wrapper">
+            <app-today-forecast (newCity)="getCity($event)" [error]="error" [weather] = "weather[0]" [degrees]="degrees"></app-today-forecast>
+        </div>
+        <div class="col-lg" id="weekly-forecast-wrapper">
+            <app-weekly-forecast [city]=city [weekweather] = "weather.slice(1,6)" [hourweather] = "weather.slice(6)"></app-weekly-forecast>
+        </div>
+    </div>
+</div>
+
+<div id="degree-wrapper">
+    <span class="degree-choice" [ngClass]="{'selected': degrees=='metric'}" (click)="updateDegrees('metric')">ºC</span>
+    <span class="degree-choice" [ngClass]="{'selected': degrees=='imperial'}" (click)="updateDegrees('imperial')">ºF</span>
+</div>
+
+<div *ngIf="city" id="scroll-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-mouse" viewBox="0 0 16 16">
+        <path d="M8 3a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 3zm4 8a4 4 0 0 1-8 0V5a4 4 0 1 1 8 0v6zM8 0a5 5 0 0 0-5 5v6a5 5 0 0 0 10 0V5a5 5 0 0 0-5-5z"/>
+    </svg>
+</div>

@@ -1,0 +1,55 @@
+<!-- City search bar -->
+<div id="search-bar-wrapper">
+    <span id="search-bar">
+        <label for="city-search"><span class="material-icons-round" id="search-icon">search</span></label>
+        <input #search type="search" id="search-input" name="city-search" placeholder="Enter a city ..." (input)="onChange(search.value)">
+        <!-- search results -->
+        <div id="search-filters" *ngIf="showFilter">
+            <div *ngFor="let city of filteredCities">
+                <a class="search-item" (click)="onClick(city); search.value=''">{{ city.name }}, {{ city.country }}</a>
+            </div>
+        </div>
+    </span>
+</div>
+
+<!-- if weather exists -->
+<div *ngIf="weather; else elseBlock">
+    <!-- Weather Image -->
+    <img id="weather-image" src="http://openweathermap.org/img/wn/{{ weather.icon }}@4x.png">
+    
+    <!-- Degrees -->
+    <p id="weather-degree">{{ weather.degrees }}º<sup>
+        <span *ngIf="degrees=='metric'">C</span>
+        <span *ngIf="degrees=='imperial'">F</span>
+    </sup></p>
+    
+    <!-- Weekday and Time -->
+    <span id="week-time-wrapper"><span id="week">{{ weather.day }}, </span><span id="time">{{ weather.time }}:00</span></span>
+    
+    <!-- Divider -->
+    <div id="divider"></div>
+
+    <!-- Details -->
+    <div id="details-wrapper"><img src="http://openweathermap.org/img/wn/{{ weather.icon }}.png" id="details-icon">{{ weather.description | titlecase }}</div>
+    
+    <!-- Precipitation -->
+    <div id="precipitation-wrapper"><img src="http://openweathermap.org/img/wn/09d.png" id="precipitation-icon">Rain - {{ weather.precipitation }}%</div>
+</div>
+
+<!-- if weather does NOT exist -->
+<ng-template #elseBlock>
+    <!-- informative warning on what to do -->
+    <div id="no-weather" class="alert alert-warning" role="alert">
+        To get started, please enter a city in the search bar above
+    </div>
+</ng-template>
+
+<!-- in case of an error, display it -->
+<div *ngIf="error">
+    <div id="error-wrapper" class="alert alert-danger" role="alert">
+        <h5 class="alert-heading">ERROR!</h5>
+        <p>An error occurred retrieving the data.</p>
+        <hr>
+        {{ error }}
+    </div>
+</div>

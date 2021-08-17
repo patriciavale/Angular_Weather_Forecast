@@ -1,0 +1,38 @@
+#card-wrapper {
+    background-color: #fff;
+    height: 120px;
+    min-width: 90px;
+    max-width: 110px;
+    border-radius: 10%;
+    margin: auto;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
+}
+
+#card-weekday {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    padding-top: 8px;
+    margin-bottom: 4px;
+}
+
+#card-img {
+    display: block;
+    margin: auto;
+    text-align: center;
+    height: 45px;
+    width: 45px;
+    z-index: 3;
+}
+
+#degree-wrapper {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    padding-top: 4px;
+}
+
+#min-degree {
+    color: #bdbdbd;
+}

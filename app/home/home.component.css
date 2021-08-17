@@ -1,0 +1,60 @@
+#today-forecast-wrapper {
+    background-color: #ffffff;
+    height: 100vh;
+    padding: 60px;
+    z-index: 1;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+}
+
+#weekly-forecast-wrapper {
+    background-color: #f6f6f6;
+    height: 100vh;
+    padding: 60px;
+}
+
+#degree-wrapper {
+    position: absolute;
+    top: 60px;
+    right: 60px;
+    color: #1a1a1a;
+    font-weight: 500;
+    font-size: 16px;
+    z-index: 2;
+}
+
+#degree-wrapper .degree-choice {
+    margin-left: 20px;
+    background-color: #fff;
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 34px;
+    cursor: pointer;
+}
+
+#degree-wrapper .selected {
+    background-color: #1a1a1a;
+    color: #fff;
+    cursor: default;
+}
+
+#scroll-icon {
+    position: absolute;
+    bottom: 20px;
+    right: 60px;
+    color: #1a1a1a;
+    z-index: 2;
+    display: none;
+}
+
+@media screen and (max-width: 991px) {
+    #degree-wrapper {
+        top: 20px;
+    }
+
+    #scroll-icon {
+        display: block;
+    }
+}

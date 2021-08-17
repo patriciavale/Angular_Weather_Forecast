@@ -1,0 +1,168 @@
+#search-bar-wrapper {
+    width: 100%;
+}
+
+#search-bar {
+    width: 100%;
+}
+
+#search-icon {
+    vertical-align: middle;
+    padding-right: 10px;
+    font-size: 20px;
+}
+
+#search-input {
+    border: none;
+    border-radius: 0%;
+    border-bottom: 1px solid #ffffff;
+    outline: none;
+    font-size: 16px;
+    width: 80%;
+    color: #1a1a1a;
+}
+
+#search-input:focus {
+    border-bottom: 1px solid #ebebeb;
+}
+
+#search-input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}
+
+#search-filters {
+    background-color: #fff;
+    z-index: 1;
+    width: 80%;
+    margin-left: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    max-height: 170px;
+}
+
+#search-filters::-webkit-scrollbar {
+    width: 6px;
+}
+
+#search-filters::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-color: #1a1a1a;
+}
+
+.search-item {
+    text-decoration: none;
+    color: #1a1a1a;
+    display: block;
+    padding: 5px 10px;
+}
+
+.search-item:hover {
+    background-color: #1a1a1a10;
+    cursor: pointer;
+}
+
+#weather-image {
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 350px;
+}
+
+#weather-degree {
+    font-size: 6vw;
+}
+
+#weather-degree sup {
+    line-height: 0;
+    font-size: 60%;
+}
+
+#week-time-wrapper {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+#week-time-wrapper #time {
+    color: #bdbdbd;
+}
+
+#divider {
+    width: 100%;
+    border-bottom: 1px solid #dddddd;
+    margin: 30px 0px;
+}
+
+#details-wrapper, #precipitation-wrapper {
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+#details-icon, #precipitation-icon {
+    width: 32px;
+    height: 32px;
+}
+
+#no-weather {
+    margin-top: 60px;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+#error-wrapper {
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+/* Tablets */
+@media screen and (max-width: 991px){
+    #weather-degree {
+        font-size: 12vw;
+    }
+}
+
+/* Phones */
+@media screen and (max-width: 600px) {
+    #weather-degree {
+        font-size: 20vw;
+    }
+    #weather-image {
+        max-width: 200px;
+        max-height: 200px;
+    }
+}
+
+/* Smaller heights */
+@media screen and (max-height: 850px) {
+    #weather-image {
+        max-width: 200px;
+        max-height: 200px;
+        float: left;
+        margin-right: 100px;
+    }
+}
+
+@media screen and (max-height: 720px) {
+    #weather-image {
+        max-width: 100px;
+        max-height: 100px;
+    }
+    #weather-degree {
+        font-size: 10vw;
+    }
+    #week-time-wrapper {
+        font-size: 16px;
+    }
+
+    #details-wrapper, #precipitation-wrapper {
+        font-weight: 600;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    
+    #divider {
+        margin: 20px 0px;
+    }
+}
