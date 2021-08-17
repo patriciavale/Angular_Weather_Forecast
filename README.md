@@ -5,6 +5,9 @@ Webpage: https://patriciavale.github.io/Angular_Weather_Forecast/
 
 # Technologies
 Angular 11
+
 OpenWeatherMap API
+
 Chart.js
+
 Leaflet
